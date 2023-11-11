@@ -23,7 +23,7 @@ def script_start(delay:int, txt_file:str, interval:int)->int:
 if __name__ == "__main__":
     print("Type in the delay before the script starts: ", sep="")
     delay = input()
-    if os.path.getsize("workday_skills_list.txt")==0:
+    if not os.path.exists("workday_skills_list.txt") or os.path.getsize("workday_skills_list.txt")==0:
         print("Skills list empty.")
         print("Starting set up...")
         initial_set_up()
