@@ -17,6 +17,7 @@ def script_start(delay:int, txt_file:str, interval:int)->int:
     with open (txt_file,"r") as skills_list:
         for line in skills_list:
             auto.type_write(line, interval=interval)
+            auto.press("enter")
 
     return 1
 
@@ -27,7 +28,7 @@ if __name__ == "__main__":
         print("Skills list empty.")
         print("Starting set up...")
         initial_set_up()
-    print("Script starting...")
+    print("Script starting. Please click on the input field. Do not shift window focus while the script is running.")
     script_start(delay,"workday_skills_list.txt",0.1)
     print("Script Done")
     
